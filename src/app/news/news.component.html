@@ -1,0 +1,25 @@
+<div class="container-fluid bg-info pt-3 pb-3 mt-2 text-center text-white text-uppercase">
+    <h1>{{t}}</h1>
+</div>
+
+<div class="container pt-5 pb-5 ">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let news of newsData | paginate:{itemsPerPage:6 ,currentPage:p,totalItems:newsData.length}">
+            <div class="card">
+                <img [src]="news.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{news.title}}</h5>
+                    <p class="card-text">{{news.title}}</p>
+                    <a [href]="news.url" class="btn btn-primary rounded-pill">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pagination -->
+    <div class="row mt-4">
+        <div class="col text-start">
+            <pagination-controls (pageChange)="p = $event" class='w-100 text-center pt-3'></pagination-controls>
+        </div>
+    </div>
+
+</div>

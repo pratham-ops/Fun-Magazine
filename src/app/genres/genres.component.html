@@ -1,0 +1,19 @@
+<div class="container-fluid bg-info pt-3 pb-3 mt-2 text-center text-white text-uppercase">
+    <h1>Genres</h1>
+</div>
+<div class="container pt-5 pb-5 ">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let game of GenresData">
+            <a [routerLink]="['/games/genres',game.id,game.name]" class="text-decoration-none text-dark ">
+                <div class="card m-2 text-center">
+                    <img [src]="game.image_background" class="card-img-top" alt="..." height="200px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{game.name}}</h5>
+                        <!-- <p class="card-text">{{news.title}}</p>
+                    <a [href]="news.url" class="btn btn-primary rounded-pill">Read More</a> -->
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

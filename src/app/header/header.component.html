@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/home">Magazine</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item" *ngFor="let topic of topics">
+                    <a class="nav-link active text-capitalize" [routerLink]="['/news', topic]">{{topic}}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Movies
+            </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="movies/now_playing">Now Playing</a></li>
+                        <li><a class="dropdown-item" href="movies/upcoming">Upcoming</a></li>
+                        <li><a class="dropdown-item" href="movies/top_rated">Top Rated</a></li>
+                        <li><a class="dropdown-item" href="movies/popular">Popular</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Games
+            </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/genres">Genres</a></li>
+                        <li><a class="dropdown-item" href="/developers">Developers</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/publishers">Publishers</a></li>
+                        <li><a class="dropdown-item" href="/platform">Platform</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex" #searchForm="ngForm" (ngSubmit)="onsearch(searchForm.value)">
+                <input class="form-control me-2" type="search" placeholder="Search" name="query" ngModel required #query="ngModel">
+                <button class="btn btn-outline-success" type="submit" [disabled]="!searchForm.valid">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>

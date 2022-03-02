@@ -1,0 +1,48 @@
+<div class="container-fluid bg-info">
+    <div class="row">
+        <div class="col-4">
+            <img [src]="'https://www.themoviedb.org/t/p/w440_and_h660_face'+Mdata.poster_path" class="card-img-top p-2" alt="..." height="500px" width="100px">
+        </div>
+        <div class="col-8 p-2 text-light">
+            <p class="text-center fs-3 fw-bold fst-italic">{{Mdata.title}}</p>
+            <p class="fs-5">{{Mdata.overview}}</p>
+            <p class="fs-6">Release-Date: {{Mdata.release_date}} , Popularity: {{Mdata.popularity}}</p>
+            <p><strong>Directors:</strong>
+                <span *ngFor="let dir of cast.directors.items">
+                    {{dir.name}}
+                </span>
+            </p>
+            <p><strong>Writers:</strong>
+                <span *ngFor="let dir of cast.writers.items">
+                    {{dir.name}} ,
+                </span>
+            </p>
+            <p><strong>Genre:</strong>
+                <span *ngFor="let genre of Mdata.genres">
+                    {{genre.name}} ,
+                </span>
+            </p>
+            <p><strong>Production-House:</strong>
+                <span *ngFor="let pcompany of Mdata.production_companies">
+                        {{pcompany.name}} ,             
+                </span>
+            </p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" *ngFor="let actor of cast.actors">
+            <div class="card mb-2">
+                <img [src]="actor.image" class="card-img-top" alt="..." height="270px">
+                <div class="card-body text-center">
+                    <h5 class="card-title">
+                        {{actor.name}}
+                    </h5>
+                    <p class="card-title">
+                        {{actor.asCharacter}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

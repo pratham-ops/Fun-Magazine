@@ -1,0 +1,25 @@
+<div class="container-fluid bg-info p-3 m-2 text-center text-white text-uppercase">
+    <h1>{{m}}</h1>
+</div>
+<div class="container pt-5 pb-5 ">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let movie of Mdata | paginate:{itemsPerPage:6 ,currentPage:p,totalItems:Mdata.length}">
+            <div class="card">
+                <img [src]="'https://www.themoviedb.org/t/p/w440_and_h660_face'+movie.poster_path" height="20%" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{movie.title}}</h5>
+                    <p class="card-text">{{movie.overview | slice:0:250}}</p>
+                    <p class="card-text">{{movie.releaseDate}}</p>
+                    <a [routerLink]="['/movie',movie.id]" class="btn btn-primary rounded-pill">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pagination -->
+    <div class="row mt-4">
+        <div class="col text-start">
+            <pagination-controls (pageChange)="p = $event" class='w-100 text-center pt-3'></pagination-controls>
+        </div>
+    </div>
+
+</div>
