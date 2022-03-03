@@ -12,6 +12,7 @@ import { PlatformComponent } from './platform/platform.component';
 import { GenresComponent } from './genres/genres.component';
 import { PublishersComponent } from './publishers/publishers.component';
 import { DevelopersComponent } from './developers/developers.component';
+import { FreegamesComponent } from './freegames/freegames.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'publishers', component:PublishersComponent },
   { path: 'developers', component:DevelopersComponent },
   { path: 'genres', component:GenresComponent },
+  { path: 'freegames', component:FreegamesComponent },
   { path: '**', component:PageNotFoundComponent },
 ];
  

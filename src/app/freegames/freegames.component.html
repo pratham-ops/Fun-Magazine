@@ -1,0 +1,32 @@
+<div class="container-fluid bg-info pt-3 pb-3 mt-2 text-center text-white text-uppercase">
+    <h1>Free Games</h1>
+</div>
+<div class="container pt-5 pb-5 ">
+    <div class="row">
+        <div class="col-md-6" *ngFor="let games of FreeData | paginate: { itemsPerPage: 6, currentPage: p, totalItems: FreeData.length}">
+            <div class="card mb-3" style="min-height:320px;">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img [src]="games.thumbnail" class="img-fluid rounded-start" alt="..." style="height: 85%; width: 100%;">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h5 class="card-title">{{games.title}}</h5>
+                            <p class="card-text">{{games.short_description}}</p>
+                            <p class="card-text"><small class="text-muted">Published & Developed by: {{games.publisher}} </small></p>
+                            <span class="card-text"><small class="text-muted">Release Date: {{games.release_date}}</small></span>
+                            <p class="card-text"><small class="text-muted">Developer: {{games.developer}}</small></p>
+                            <a [href]="games.freetogame_profile_url" target="_blank" class="btn btn-info rounded-pill">Play Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col text-start">
+            <pagination-controls (pageChange)="p = $event" class='w-100 text-center pt-3'></pagination-controls>
+        </div>
+    </div>
+
+</div>

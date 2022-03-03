@@ -33,8 +33,12 @@
                         </li>
                         <li><a class="dropdown-item" href="/publishers">Publishers</a></li>
                         <li><a class="dropdown-item" href="/platform">Platform</a></li>
+                        <li>
+                            <a class="dropdown-item" href="/freegames">Play</a>
+                        </li>
                     </ul>
                 </li>
+
             </ul>
             <form class="d-flex" #searchForm="ngForm" (ngSubmit)="onsearch(searchForm.value)">
                 <input class="form-control me-2" type="search" placeholder="Search" name="query" ngModel required #query="ngModel">

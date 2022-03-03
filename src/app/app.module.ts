@@ -19,6 +19,7 @@ import { PlatformComponent } from './platform/platform.component';
 import { GenresComponent } from './genres/genres.component';
 import { PublishersComponent } from './publishers/publishers.component';
 import { DevelopersComponent } from './developers/developers.component';
+import { FreegamesComponent } from './freegames/freegames.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { DevelopersComponent } from './developers/developers.component';
     PlatformComponent,
     GenresComponent,
     PublishersComponent,
-    DevelopersComponent
+    DevelopersComponent,
+    FreegamesComponent
   ],
   imports: [
     BrowserModule,
