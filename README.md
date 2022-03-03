@@ -1,4 +1,6 @@
 # Magazine
+[![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Checkout+My+Project+Website;It+is+made+using+MEAN+STACK+Bootstrap; )](https://git.io/typing-svg)
+###  [pratham-ops.github.io](https://fun-magazine.netlify.app/) :octocat:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
